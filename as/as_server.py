@@ -7,7 +7,7 @@ r_socket = socket(AF_INET, SOCK_DGRAM)
 r_socket.bind(('', SERVER_PORT))
 
 while True:
-    message, _ = as_socket.recvfrom(2048)
+    message, _ = r_socket.recvfrom(2048)
     json_data = json.loads(message.decode())
     response = ''
     
